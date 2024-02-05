@@ -16,23 +16,13 @@ register_nav_menus(
     ]
 );
 
-// Gérer la taille du logo
-function themename_custom_logo_setup()
-{
-    $defaults = array(
-        'height'               => 100,
-        'width'                => 400,
-        'flex-height'          => true,
-        'flex-width'           => true,
-        'header-text'          => array('site-title', 'site-description'),
-        'unlink-homepage-logo' => true,
-    );
-    add_theme_support('custom-logo', $defaults);
-}
-add_action('after_setup_theme', 'themename_custom_logo_setup');
-
 //Importer les médias et les articles
 add_theme_support('post-thumbnails');
+
+// Changer la couleur d'arrière plan
+add_theme_support( 'custom-background' );
+add_theme_support( 'custom-header');
+
 
 //Ajouter une side-bar
 register_sidebar([
