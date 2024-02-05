@@ -1,8 +1,6 @@
 <?php get_header() ?>
 
 <?php get_template_part('templates/posts','loop') ?>
-
-
 <!-- <h1>The Gigachad</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab labore velit dolorem! Dignissimos earum beatae delectus nesciunt itaque commodi consequatur illo minus. Maiores delectus incidunt illum est laboriosam voluptates?</p>
     </div> -->

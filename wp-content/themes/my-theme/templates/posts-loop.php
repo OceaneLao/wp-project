@@ -3,8 +3,8 @@
   if (have_posts()) : while (have_posts()) : the_post();
   ?>
 
-      <h1>
-        <?php the_title(); ?>
+      <h1><a href="<?php the_permalink(); ?>">
+        <?php the_title(); ?></a>
       </h1>
       <p>
         <?php the_post_thumbnail(); ?>
@@ -14,6 +14,8 @@
       </p>
   <?php
     endwhile;
+    the_posts_pagination();
   endif;
   ?>
+
 </div>

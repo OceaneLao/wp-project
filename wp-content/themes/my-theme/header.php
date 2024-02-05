@@ -22,6 +22,7 @@
             </div>
             <?php endif; ?>
         <?php endif; ?>
+        <?php get_search_form(); ?>
     </header>
 
     <div class="row">

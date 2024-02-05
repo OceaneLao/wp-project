@@ -31,3 +31,11 @@ register_sidebar([
     'before_widget' => '<div>',
     'after_widget' => '</div>'
 ]);
+
+// Pagination
+function your_themes_pagination() {
+	global $wp_query;
+	echo paginate_links();
+}
+
+// Commentaires
