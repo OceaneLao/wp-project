@@ -37,5 +37,3 @@ function your_themes_pagination() {
 	global $wp_query;
 	echo paginate_links();
 }
-
-// Commentaires
