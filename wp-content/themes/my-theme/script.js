@@ -1,0 +1,3 @@
+function pouetPouet() {
+    alert('Hello');
+}
