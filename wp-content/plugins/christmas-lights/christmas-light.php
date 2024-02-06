@@ -4,7 +4,7 @@ Plugin Name: Christmas Lights
 Plugin URI: https://dekpo.com
 Description: This is a Christmas Lights plugin test
 Author: Me
-Version: 0.1
+Version: 1.0
 */
 
 function christmas_lights()
