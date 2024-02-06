@@ -19,9 +19,12 @@ function my_snow_storm_front_settings_script()
 {
 ?>
     <script>
-        snowStorm.snowColor = <?php echo get_option('my_snowstorm_color','#FFFFFF')?>; // blue-ish snow!?
+        snowStorm.snowColor = '<?php echo get_option('my_snowstorm_color','#FFFFFF')?>'; // blue-ish snow!?
         snowStorm.flakesMaxActive = 400; // show more snow on screen at once
         snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+        snowStorm.snowCharacter = '<?php echo get_option('my_snowstorm_character','&hearts;')?>';
+        snowStorm.flakeWidth = 20;
+        snowStorm.flakeHeight = 20;
     </script>
 <?php
 }
@@ -61,6 +64,10 @@ function my_snowstorm_register_settings_sections_and_fields(){
         'my-snowstorm-options', 
         'my_snowstorm_color'
     );
+    register_setting(
+        'my-snowstorm-options', 
+        'my_snowstorm_character'
+    );
     add_settings_section(
         'my_snowstorm_settings_section',
         'Snowstorm Settings Section',
@@ -74,9 +81,15 @@ function my_snowstorm_register_settings_sections_and_fields(){
         'my-snowstorm-options',
         'my_snowstorm_settings_section'
     );
+    add_settings_field(
+        'my_snowstorm_character',
+        'Snowstorm Character',
+        'my_snowstorm_character_html_input',
+        'my-snowstorm-options',
+        'my_snowstorm_settings_section'
+    );
 }
 add_action('admin_init','my_snowstorm_register_settings_sections_and_fields');
-
 function my_snowstorm_first_section() {
     ?>
     <p>
@@ -84,14 +97,22 @@ function my_snowstorm_first_section() {
     </p>
     <?php
 }
-
 function my_snowstorm_color_html_input() {
     ?>
-    <input type="text" 
+    <input type="color" 
     name="my_snowstorm_color" 
     id="my_snowstorm_color" 
     value="<?php echo get_option('my_snowstorm_color','#FFF') 
     ?>">
     
+    <?php
+}
+function my_snowstorm_character_html_input() {
+    ?>
+    <input type="text" 
+    name="my_snowstorm_character" 
+    id="my_snowstorm_character" 
+    value="<?php echo get_option('my_snowstorm_character','&hearts;') 
+    ?>">
     <?php
 }
