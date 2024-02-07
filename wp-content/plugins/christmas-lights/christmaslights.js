@@ -86,7 +86,7 @@ function $(sID) {
           url: urlBase+'sound/glass'+i+'.mp3',
           autoLoad: true,
           multiShot: true,
-          volume:50
+          volume:10
         });
       }
       self.initSounds = function() {} // safety net
